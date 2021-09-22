@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "DetaljiMenadzerov_Menadzer";
+}
+
+
+<h2>Detalji aranzmana @ViewBag.aranzman.Naziv</h2>
+
+<table border="1">
+    <tr>
+        <th> Naziv Aranzmana </th>
+        <th> Tip aranzmana </th>
+        <th> Tip prevoza </th>
+        <th> Lokacija </th>
+        <th> Datum pocetka </th>
+        <th> Datum kraja </th>
+        <th> Adresa nalazenja </th>
+        <th> Geografska sirina </th>
+        <th> Geografska duzina </th>
+        <th> Vreme nalazenja </th>
+        <th> Broj putnika </th>
+        <th> Opis </th>
+        <th> Program </th>
+        <th> Poster </th>
+    </tr>
+    <tr>
+        <td> @ViewBag.aranzman.Naziv </td>
+        <td> @ViewBag.aranzman.Tip_Aranzmana.ToString() </td>
+        <td> @ViewBag.aranzman.Tip_Prevoza.ToString() </td>
+        <td> @ViewBag.aranzman.Lokacija </td>
+        <td> @ViewBag.aranzman.Datum_Pocetka </td>
+        <td> @ViewBag.aranzman.Datum_Zavrsetka </td>
+        <td> @ViewBag.aranzman.Adresa_Nalazenja </td>
+        <td> @ViewBag.aranzman.Geografska_Sirina </td>
+        <td> @ViewBag.aranzman.Geografska_Duzina </td>
+        <td> @ViewBag.aranzman.Vreme_Nalazenja </td>
+        <td> @ViewBag.aranzman.Broj_Putnika </td>
+        <td> @ViewBag.aranzman.Opis </td>
+        <td> @ViewBag.aranzman.Program </td>
+        <td> <img width="200px" height="150" src="@Url.Content(ViewBag.aranzman.Poster)" /> </td>
+
+</table>
+

@@ -1,0 +1,144 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "JediniceAdvanced_Menadzer";
+}
+
+@if (ViewBag.jedinice.Count == 0)
+{
+    <h3>Lista je prazna</h3>
+}
+else
+{
+    <table border="1">
+        <tr>
+            <td></td>
+            <td>
+                <form method="post" action="~/Home/SortJedinicaSmestaj">
+                    <input type="submit" value="Rastuce" />
+                    <input type="hidden" name="Parametar" value="Kapacitet">
+                    <input type="hidden" name="Red" value="Rastuce">
+                </form>
+            </td>
+            <td></td>
+            <td>
+                <form method="post" action="~/Home/SortJedinicaSmestaj">
+                    <input type="submit" value="Rastuce" />
+                    <input type="hidden" name="Parametar" value="Cena">
+                    <input type="hidden" name="Red" value="Rastuce">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>Naziv</td>
+            <td>Broj Gostuju</td>
+            <td>Kucni ljubimci</td>
+            <td> Cena </td>
+            <td> Dostupnost </td>
+
+        </tr>
+        @foreach (Model_Jedinica j in @ViewBag.jedinice)
+        {
+            <tr>
+                <td> @j.Naziv</td>
+                <td> @j.BrojGostiju</td>
+                @if (j.Ljubimci)
+                {
+                    <td> Da </td>
+                }
+                else
+                {
+                    <td>Ne</td>
+                }
+                <td> @j.Cena </td>
+                @if (j.Dostupna)
+                {
+                    <td> Slobodno </td>
+                }
+                else
+                {
+                    <td> Rezervisano </td>
+                }
+                <td>
+                    <form method="post" action="~/Home/ObrisiJedinicu">
+                        <input type="hidden" name="Naziv" value="@j.Naziv" />
+                        <input type="submit" value="Obrisi" />
+                    </form>
+                    <form method="post" action="~/Home/IzmeniJedinicu">
+                        <input type="hidden" name="Naziv" value="@j.Naziv" />
+                        <input type="submit" value="Izmeni" />
+                    </form>
+                </td>
+
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td>
+                <form method="post" action="~/Home/SortJedinicaSmestaj">
+                    <input type="submit" value="Opadajuce" />
+                    <input type="hidden" name="Parametar" value="Kapacitet">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+            <td></td>
+            <td>
+                <form method="post" action="~/Home/SortJedinicaSmestaj">
+                    <input type="submit" value="Opadajuce" />
+                    <input type="hidden" name="Parametar" value="Cena">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <h3>Pretraga</h3>
+    <form method="post" action="~/Pretrage/JediniceSmestaj">
+        <table border="1">
+            <tr>
+                <td> Cena </td>
+                <td> Min kapacitet </td>
+                <td> Max kapacitet </td>
+                <td> Ljubimci </td>
+                <td> Pretrazi </td>
+
+            </tr>
+            <tr>
+                <td> <input type="number" name="Cena" min="1" /> </td>
+                <td> <input type="number" name="DonjaGranica" min="1" /> </td>
+                <td> <input type="number" name="GornjaGranica" min="1" /> </td>
+                <td>
+                    <select id="Ljubimci" name="Ljubimci">
+                        <option value=""></option>
+                        <option value="Da">Da</option>
+                        <option value="Ne">Ne</option>
+                    </select>
+                </td>
+                <td> <input type="submit" value="Pretrazi" /></td>
+            </tr>
+        </table>
+    </form>
+    <br />
+}
+<h3> Dodaj jedinicu</h3>
+<form method="post" action="~/Home/DodajJedinicu">
+
+    <table border="1">
+        <tr>
+            <td>Naziv</td>
+            <td>Kapacitet</td>
+            <td>Ljubimci</td>
+            <td>Cena</td>
+        </tr>
+        <tr>
+            <td> <input type="text" name="Naziv" required /></td>
+            <td> <input type="number" name="BrojGostiju" min="1" required /></td>
+            <td>
+                <input type="checkbox" name="Ljubimci" value="true" />
+            </td>
+            <td><input type="number" name="Cena" min="1" required /></td>
+            <td><input type="submit" value="Dodaj jedinicu" /> </td>
+        </tr>
+    </table>
+</form>
+

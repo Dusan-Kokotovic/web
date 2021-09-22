@@ -1,0 +1,228 @@
+[
+  {
+    "Id": "asdadasd",
+    "Tip": 2,
+    "Naziv": "Aranzman32111",
+    "Zvezdice": 5,
+    "Bazen": false,
+    "Spa": true,
+    "Prilagodjeno": false,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [
+      "aaaa",
+      "bbbb",
+      "cccc"
+    ],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "aaaaaaaaa",
+    "Tip": 2,
+    "Naziv": "Smestaj5",
+    "Zvezdice": 5,
+    "Bazen": false,
+    "Spa": true,
+    "Prilagodjeno": false,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [
+      "dddd",
+      "eeee",
+      "ffff",
+      "gggg"
+    ],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "Smestaj1",
+    "Tip": 2,
+    "Naziv": "Smestaj4",
+    "Zvezdice": 5,
+    "Bazen": false,
+    "Spa": true,
+    "Prilagodjeno": false,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [
+      "Smestaj4-dddd",
+      "Smestaj4-eeee",
+      "Smestaj4-yyyy",
+      "Smestaj4-ffff",
+      "Smestaj4-qqqq",
+      "Smestaj4-vvvv",
+      "Smestaj4-asdf",
+      "Smestaj4-wqwqwq",
+      "Smestaj4-yxyxy",
+      "Smestaj4-kokok",
+      "Smestaj4-nova"
+    ],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "Smestaj2",
+    "Tip": 2,
+    "Naziv": "Smestaj3",
+    "Zvezdice": 5,
+    "Bazen": false,
+    "Spa": true,
+    "Prilagodjeno": false,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [
+      "dddd",
+      "eeee",
+      "ffff",
+      "gggg"
+    ],
+    "Obrisan": true,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "toeifdi",
+    "Tip": 2,
+    "Naziv": "Smestaj2",
+    "Zvezdice": 5,
+    "Bazen": false,
+    "Spa": true,
+    "Prilagodjeno": false,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [],
+    "Obrisan": true,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "ddufqor",
+    "Tip": 2,
+    "Naziv": "Ajdeeee",
+    "Zvezdice": 5,
+    "Bazen": true,
+    "Spa": true,
+    "Prilagodjeno": true,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "rqtqwqs",
+    "Tip": 2,
+    "Naziv": "CasaCasanova",
+    "Zvezdice": 5,
+    "Bazen": true,
+    "Spa": true,
+    "Prilagodjeno": false,
+    "Wifi": false,
+    "Slobodno": 0,
+    "Jedinice": [
+      "CasaCasanova-zxc"
+    ],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "oyetpry",
+    "Tip": 2,
+    "Naziv": "TestSmestaj",
+    "Zvezdice": 5,
+    "Bazen": true,
+    "Spa": false,
+    "Prilagodjeno": true,
+    "Wifi": false,
+    "Slobodno": 0,
+    "Jedinice": [
+      "TestSmestaj-soba1",
+      "TestSmestaj-soba2"
+    ],
+    "Obrisan": true,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "tqyoypp",
+    "Tip": 0,
+    "Naziv": "Zgrada",
+    "Zvezdice": 5,
+    "Bazen": false,
+    "Spa": true,
+    "Prilagodjeno": false,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [
+      "Zgrada-soba1",
+      "Zgrada-soba2"
+    ],
+    "Obrisan": true,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "esaotqi",
+    "Tip": 1,
+    "Naziv": "Kuca",
+    "Zvezdice": 5,
+    "Bazen": true,
+    "Spa": false,
+    "Prilagodjeno": false,
+    "Wifi": true,
+    "Slobodno": 0,
+    "Jedinice": [
+      "Kuca-soba1",
+      "Kuca-soba2",
+      "Kuca-sobaa3"
+    ],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "awarusq",
+    "Tip": 2,
+    "Naziv": "Koliba",
+    "Zvezdice": 5,
+    "Bazen": true,
+    "Spa": false,
+    "Prilagodjeno": true,
+    "Wifi": false,
+    "Slobodno": 0,
+    "Jedinice": [
+      "Koliba-soba6"
+    ],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "arudtur",
+    "Tip": 2,
+    "Naziv": "Finalni",
+    "Zvezdice": 4,
+    "Bazen": false,
+    "Spa": true,
+    "Prilagodjeno": true,
+    "Wifi": false,
+    "Slobodno": 0,
+    "Jedinice": [
+      "Finalni-soba2",
+      "Finalni-soba5",
+      "Finalni-soba33"
+    ],
+    "Obrisan": false,
+    "Menadzer": "menadzer"
+  },
+  {
+    "Id": "ydsfdow",
+    "Tip": 1,
+    "Naziv": "Sheraton",
+    "Zvezdice": 5,
+    "Bazen": true,
+    "Spa": true,
+    "Prilagodjeno": true,
+    "Wifi": false,
+    "Slobodno": 0,
+    "Jedinice": [],
+    "Obrisan": true,
+    "Menadzer": "menadzer"
+  }
+]

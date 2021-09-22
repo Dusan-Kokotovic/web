@@ -1,0 +1,236 @@
+[
+  {
+    "Id": "dddd",
+    "Naziv": "Smestaj4-dddd",
+    "BrojGostiju": 3,
+    "Ljubimci": false,
+    "Cena": 4,
+    "Obisana": false,
+    "Dostupna": false
+  },
+  {
+    "Id": "eeee",
+    "Naziv": "Smestaj4-eeee",
+    "BrojGostiju": 3,
+    "Ljubimci": false,
+    "Cena": 4,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "ffff",
+    "Naziv": "Smestaj4-ffff",
+    "BrojGostiju": 3,
+    "Ljubimci": false,
+    "Cena": 4,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "gggg",
+    "Naziv": "Smestaj4-gggg",
+    "BrojGostiju": 3,
+    "Ljubimci": false,
+    "Cena": 4,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "uwptqwa",
+    "Naziv": "Smestaj4-yyyy",
+    "BrojGostiju": 6,
+    "Ljubimci": true,
+    "Cena": 7,
+    "Obisana": false,
+    "Dostupna": false
+  },
+  {
+    "Id": "yqwuqpi",
+    "Naziv": "Smestaj4-ffff",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 10,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "eftpqwo",
+    "Naziv": "Smestaj4-vvvv",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 5,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "aayqwud",
+    "Naziv": "Smestaj4-asdf",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 5,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "poiuztre",
+    "Naziv": "Smestaj4-kokok",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 5,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "wqwqwqwqwq",
+    "Naziv": "Smestaj4-wqwqwq",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 5,
+    "Obisana": false,
+    "Dostupna": false
+  },
+  {
+    "Id": "yxyxyxyxyx",
+    "Naziv": "Smestaj4-yxyxy",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 5,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "wirpeyo",
+    "Naziv": "CasaCasanova-zxc",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 5,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "uatseea",
+    "Naziv": "TestSmestaj-soba1",
+    "BrojGostiju": 2,
+    "Ljubimci": true,
+    "Cena": 10,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "eesrfdo",
+    "Naziv": "TestSmestaj-soba2",
+    "BrojGostiju": 3,
+    "Ljubimci": false,
+    "Cena": 15,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "ratwiai",
+    "Naziv": "Zgrada-soba1",
+    "BrojGostiju": 3,
+    "Ljubimci": true,
+    "Cena": 14,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "wyryrpr",
+    "Naziv": "Zgrada-soba2",
+    "BrojGostiju": 4,
+    "Ljubimci": false,
+    "Cena": 27,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "oapdiwa",
+    "Naziv": "Kuca-soba1",
+    "BrojGostiju": 2,
+    "Ljubimci": true,
+    "Cena": 15,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "itiiqeo",
+    "Naziv": "Kuca-soba2",
+    "BrojGostiju": 5,
+    "Ljubimci": false,
+    "Cena": 33,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "ofpppea",
+    "Naziv": "Kuca-sobaa3",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 25,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "osssfid",
+    "Naziv": "Koliba-soba6",
+    "BrojGostiju": 3,
+    "Ljubimci": true,
+    "Cena": 6,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "ieoyofd",
+    "Naziv": "Finalni-soba2",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 24,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "srfedoq",
+    "Naziv": "FinalTest-soba3",
+    "BrojGostiju": 4,
+    "Ljubimci": false,
+    "Cena": 23,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "tpsfrra",
+    "Naziv": "Finalni-soba5",
+    "BrojGostiju": 10,
+    "Ljubimci": true,
+    "Cena": 10,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "wqdsaqo",
+    "Naziv": "Smestaj4-nova",
+    "BrojGostiju": 5,
+    "Ljubimci": true,
+    "Cena": 20,
+    "Obisana": false,
+    "Dostupna": true
+  },
+  {
+    "Id": "reyefoa",
+    "Naziv": "Finalni-soba11",
+    "BrojGostiju": 4,
+    "Ljubimci": true,
+    "Cena": 20,
+    "Obisana": true,
+    "Dostupna": true
+  },
+  {
+    "Id": "trtiwwu",
+    "Naziv": "Finalni-soba33",
+    "BrojGostiju": 10,
+    "Ljubimci": true,
+    "Cena": 22,
+    "Obisana": false,
+    "Dostupna": true
+  }
+]

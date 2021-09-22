@@ -1,0 +1,56 @@
+[
+  {
+    "Id": "terioqd",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "Tekst": "Sve ekstra",
+    "Ocena": 4,
+    "Odobren": true,
+    "Obrisan": false
+  },
+  {
+    "Id": "zxczxczxc",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "Tekst": "Ne svidja mi se aerodrom",
+    "Ocena": 4,
+    "Odobren": true,
+    "Obrisan": false
+  },
+  {
+    "Id": "rtyryusd",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "Tekst": "Nikola Milena aerodrom",
+    "Ocena": 4,
+    "Odobren": false,
+    "Obrisan": true
+  },
+  {
+    "Id": "oayrqer",
+    "Turista": "dritan",
+    "Aranzman": "Aranzman3",
+    "Tekst": "dritanov komentar",
+    "Ocena": 5,
+    "Odobren": false,
+    "Obrisan": false
+  },
+  {
+    "Id": "fyaudee",
+    "Turista": "turista",
+    "Aranzman": "Aranzman2",
+    "Tekst": "Sve super",
+    "Ocena": 5,
+    "Odobren": false,
+    "Obrisan": true
+  },
+  {
+    "Id": "dqoaysa",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "Tekst": "Sve super",
+    "Ocena": 5,
+    "Odobren": true,
+    "Obrisan": false
+  }
+]

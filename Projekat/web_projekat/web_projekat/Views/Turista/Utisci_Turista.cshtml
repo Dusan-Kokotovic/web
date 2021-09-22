@@ -1,0 +1,29 @@
+﻿@using web_projekat.Models
+@{
+    ViewBag.Title = "Komentari";
+}
+<h1>Utisci</h1>
+<a href="~/Home/Index"> Pocetna </a>
+
+@foreach (Model_Komentar utisak in ViewBag.utisci)
+{
+    <table border="1">
+        <tr>
+            <td> Autor </td>
+            <td> @utisak.Turista </td>
+        </tr>
+        <tr>
+            <td> Aranzman </td>
+            <td> @utisak.Aranzman </td>
+        </tr>
+        <tr>
+            <td> Ocena </td>
+            <td> @utisak.Ocena </td>
+        </tr>
+        <tr>
+            <td> Tekst </td>
+            <td> @utisak.Tekst </td>
+        </tr>
+    </table>
+    <br />
+}

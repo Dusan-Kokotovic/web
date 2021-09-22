@@ -1,0 +1,87 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "IzmenaSmestaja_Menadzer";
+}
+
+<h2>Izmena smestaja</h2>
+
+<form method="post" action="~/Home/ExecuteSmestaj">
+    <table border="1">
+        <tr>
+            <td> Naziv </td>
+            <td> <input type="text" name="Naziv" value="@ViewBag.smestaj.Naziv" required /> </td>
+        </tr>
+        <tr>
+            <td> Tip smestaja </td>
+            <td>
+                <select id="Tip" name="Tip">
+                    <option value="Vila">Vila</option>
+                    <option value="@ViewBag.smestaj.Tip">@ViewBag.smestaj.Tip</option>
+                    <option value="Motel">Motel</option>
+                    <option value="Hotel">Hotel</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Zvezdice</td>
+            <td> <input type="number" name="Zvezdice" min="1" max="5" value="@ViewBag.smestaj.Zvezdice" required /></td>
+        </tr>
+        <tr>
+            <td> Bazen</td>
+            <td>
+                @if (ViewBag.smestaj.Bazen)
+                {
+                    <input type="checkbox" name="Bazen" value="true" checked/>
+                }
+                else
+                {
+                    <input type="checkbox" name="Bazen" value="true" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td> Spa </td>
+            <td>
+                @if (ViewBag.smestaj.Spa)
+                {
+                    <input type="checkbox" name="Spa" value="true" checked />
+                }
+                else
+                {
+                    <input type="checkbox" name="Spa" value="true" />
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <td> Prilagodjeno za invalide</td>
+            <td>
+                @if (ViewBag.smestaj.Prilagodjeno)
+                {
+                    <input type="checkbox" name="Prilagodjeno" value="true" checked />
+                }
+                else
+                {
+                    <input type="checkbox" name="Prilagodjeno" value="true" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td> Wifi </td>
+            <td>
+                @if (ViewBag.smestaj.Wifi)
+                {
+                    <input type="checkbox" name="Wifi" value="true" checked />
+                }
+                else
+                {
+                    <input type="checkbox" name="Wifi" value="true" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"> <input type="submit" name="Sacuvaj izmene" /> </td>
+        </tr>
+    </table>
+</form>

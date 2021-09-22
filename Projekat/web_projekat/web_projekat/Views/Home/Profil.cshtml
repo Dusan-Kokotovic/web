@@ -1,0 +1,64 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2>Profil</h2>
+
+@{
+    string kose_crte = ViewBag.prikaz.Datum_Rodjenja;
+    string[] lista = kose_crte.Split('/');
+    string datum = lista[2] + "-" + lista[1] + "-" + lista[0];
+
+}
+
+
+<form method="post" action="~/Home/Izmena">
+    <input type="hidden" name="Uloga" value="Administrator" />
+    <table border="1">
+        <tr>
+            <td> Korisnicko ime</td>
+            <td>
+                @ViewBag.prikaz.Korisnicko_Ime  <input type="hidden" name="Korisnicko_Ime" value="@ViewBag.prikaz.Korisnicko_Ime" />
+            </td>
+        </tr>
+        <tr>
+            <td> Lozinka </td>
+            <td> <input type="password" name="Lozinka" value="@ViewBag.prikaz.Lozinka" required /> </td>
+        </tr>
+        <tr>
+            <td> Ime </td>
+            <td> <input type="text" name="Ime" value="@ViewBag.prikaz.Ime" required /> </td>
+        </tr>
+        <tr>
+            <td> Prezime </td>
+            <td> <input type="text" name="Prezime" value="@ViewBag.prikaz.Prezime" required /> </td>
+        </tr>
+        <tr>
+            <td> Pol </td>
+            <td>
+                <select id="Pol" name="Pol">
+                    <option value="@ViewBag.prikaz.Pol">@ViewBag.prikaz.Pol</option>
+                    <option value="Zensko">Zensko</option>
+                    <option value="Musko">Musko</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Email </td>
+            <td> <input type="email" name="Email" value="@ViewBag.prikaz.Email" required /> </td>
+        </tr>
+        <tr>
+            <td> Datum Rodjenja</td>
+            <td>
+                <input type="date" id="Datum_Rodjenja" name="Datum_Rodjenja" value="@datum" max="2021-09-11" required>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Izmeni" />
+            </td>
+        </tr>
+    </table>
+</form>

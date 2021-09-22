@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Registracija";
+}
+
+<h2>Registracija</h2>
+
+<form method="post" action="Registracija">
+    <table border="1">
+        <tr>
+            <td> Korisnicko ime</td>
+            <td> <input type="text" name="Korisnicko_Ime" required />  </td>
+        </tr>
+        <tr>
+            <td> Lozinka </td>
+            <td> <input type="password" name="Lozinka" required /> </td>
+        </tr>
+        <tr>
+            <td> Ime </td>
+            <td> <input type="text" name="Ime" required /> </td>
+        </tr>
+        <tr>
+            <td> Prezime </td>
+            <td> <input type="text" name="Prezime" required /> </td>
+        </tr>
+        <tr>
+            <td> Pol </td>
+            <td>
+                <select id="Pol" name="Pol">
+                    <option value="Zensko">Zensko</option>
+                    <option value="Musko">Musko</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Email </td>
+            <td> <input type="email" name="Email" required /> </td>
+        </tr>
+        <tr>
+            <td> Datum Rodjenja</td>
+            <td>
+                <input type="date" id="Datum_Rodjenja" name="Datum_Rodjenja" max="2021-09-11" required>
+            </td>
+        </tr>
+        <tr>
+            <input type="hidden" name="Uloga" value="Turista">
+            @{
+                List<string> lista = new List<string>();
+            }
+            <input type="hidden" name="Aranzmani" value="lista">
+            <input type="hidden" name="Obrisan" value="false">
+            <input type="hidden" name="Otkazivanja" value="0">
+
+            <td colspan="2"><input type="submit" /> </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,45 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "RezervacijeMojih_Menadzer";
+}
+@if (ViewBag.rezervacije.Count == 0)
+{
+    <h2>Nema rezervacija</h2>
+
+}
+else
+{
+    <h2>Moje rezervacije</h2>
+
+    <table border="1">
+        <tr>
+            <td> Identifikator </td>
+            <td> Aranzman </td>
+            <td> Smestajna jedinica</td>
+            <td> Status</td>
+            <td> Detalji </td>
+        </tr>
+        @foreach (Model_Rezervacija rezervacija in ViewBag.rezervacije)
+        {
+            <tr>
+                <td> @rezervacija.Id</td>
+                <td> @rezervacija.Aranzman</td>
+                <td> @rezervacija.SmestajnaJedinica</td>
+                <td> @rezervacija.Status.ToString()</td>
+                <form method="post" action="~/Home/DetaljiRezervacije">
+                    <td>
+                        <input type="hidden" name="Aranzman" value="@rezervacija.Aranzman">
+                        <input type="hidden" name="Id" value="@rezervacija.Id">
+                        <input type="hidden" name="Status" value="@rezervacija.Status">
+                        <input type="hidden" name="Turista" value="@rezervacija.Turista">
+                        <input type="hidden" name="SmestajnaJedinica" value="@rezervacija.SmestajnaJedinica">
+                        <input type="submit" value="Prikazi" />
+                    </td>
+                </form>
+
+            </tr>
+        }
+    </table>
+}
+

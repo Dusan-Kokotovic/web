@@ -1,0 +1,105 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "Svi_Administrator";
+}
+
+<h2>Svi_Administrator</h2>
+
+<table border="1">
+    <tr>
+        <td></td>
+        <td>
+            <form method="post" action="~/Home/SortKorisnika">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Ime">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortKorisnika">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Prezime">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td>
+            <form method="post" action="~/Home/SortKorisnika">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Uloga">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>Korisnicko ime</td>
+        <td>Ime</td>
+        <td>Prezime</td>
+        <td>Pol</td>
+        <td>Email</td>
+        <td>Datum rodjenja</td>
+        <td>Uloga</td>
+    </tr>
+    @foreach (Model_Korisnik korisnik in ViewBag.Korisnici)
+    {
+        <tr>
+            <td>@korisnik.Korisnicko_Ime</td>
+            <td>@korisnik.Ime</td>
+            <td>@korisnik.Prezime</td>
+            <td>@korisnik.Pol.ToString()</td>
+            <td>@korisnik.Email</td>
+            <td>@korisnik.Datum_Rodjenja</td>
+            <td>@korisnik.Uloga.ToString()</td>
+        </tr>
+    }
+        <tr>
+            <td></td>
+
+            <td>
+                <form method="post" action="~/Home/SortKorisnika">
+                    <input type="submit" value="Opadajuce" />
+                    <input type="hidden" name="Parametar" value="Ime">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Home/SortKorisnika">
+                    <input type="submit" value="Opadajuce" />
+                    <input type="hidden" name="Parametar" value="Prezime">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td>
+                <form method="post" action="~/Home/SortKorisnika">
+                    <input type="submit" value="Opadajuce" />
+                    <input type="hidden" name="Parametar" value="Uloga">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+        </tr>
+</table>
+
+<br />
+<form method="post" action="~/Pretrage/Korisnici">
+    <table border="1">
+        <tr>
+            <td> Ime </td>
+            <td> Prezime </td>
+            <td> Uloga </td>
+            <td> Pretrazi </td>
+
+        </tr>
+        <tr>
+            <td> <input type="text" name="Ime" /> </td>
+            <td> <input type="text" name="Prezime" /> </td>
+            <td> <input type="text" name="Uloga" /> </td>
+            <td> <input type="submit" value="Pretrazi" /> </td>
+        </tr>
+    </table>
+</form>

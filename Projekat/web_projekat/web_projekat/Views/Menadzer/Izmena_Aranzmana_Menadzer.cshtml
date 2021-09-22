@@ -1,0 +1,111 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "Izmena_Aranzmana_Menadzer";
+}
+
+@{
+    string kose_crte1 = ViewBag.aranzman.Datum_Pocetka;
+    string[] lista1 = kose_crte1.Split('/');
+    string datum1 = lista1[2] + "-" + lista1[1] + "-" + lista1[0];
+
+}
+
+@{
+    string kose_crte2 = ViewBag.aranzman.Datum_Zavrsetka;
+    string[] lista2 = kose_crte2.Split('/');
+    string datum2 = lista2[2] + "-" + lista2[1] + "-" + lista2[0];
+
+}
+
+
+<form method="post" action="~/Home/ExecuteAranzman">
+    <table border="1">
+        <tr>
+            <td> Naziv </td>
+            <td> <input type="text" name="Naziv" value="@ViewBag.aranzman.Naziv" required />  </td>
+        </tr>
+        <tr>
+            <td> Tip </td>
+            <td>
+                <select id="Tip_Aranzmana" name="Tip_Aranzmana">
+                    <option value="@ViewBag.aranzman.Tip_Aranzmana">@ViewBag.aranzman.Tip_Aranzmana</option>
+                    <option value="Nocenje_Sa_Doruckom">Nocenje_Sa_Doruckom</option>
+                    <option value="Polupansion">Polupansion</option>
+                    <option value="Pun_Pansion">Pun_Pansion</option>
+                    <option value="All_Inclusive">All_Inclusive</option>
+                    <option value="Najam_Apartmana">Najam_Apartmana</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Prevoz </td>
+            <td>
+                <select id="Tip_Prevoza" name="Tip_Prevoza">
+                    <option value="@ViewBag.aranzman.Tip_Prevoza">@ViewBag.aranzman.Tip_Prevoza</option>
+                    <option value="Autobus">Autobus</option>
+                    <option value="Avion">Avion</option>
+                    <option value="Kombinovano">Kombinovano</option>
+                    <option value="Individualan">Individualan</option>
+                    <option value="Ostalo">Ostalo</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Lokacija </td>
+            <td> <input type="text" name="Lokacija" required value="@ViewBag.aranzman.Lokacija" />  </td>
+        </tr>
+        <tr>
+            <td> Datum pocetka </td>
+            <td>
+                <input type="date" id="Datum_Pocetka" name="Datum_Pocetka" value="@datum1" required>
+            </td>
+        </tr>
+        <tr>
+            <td> Datum kraja </td>
+            <td> <input type="date" id="Datum_Zavrsetka" name="Datum_Zavrsetka" value="@datum2" required> </td>
+        </tr>
+        <tr>
+            <td> Vreme nalazenja </td>
+            <td> <input type="time" id="Vreme_Nalazenja" name="Vreme_Nalazenja" value="@ViewBag.aranzman.Vreme_Nalazenja" required> </td>
+        </tr>
+        <tr>
+            <td> Geografska sirina </td>
+            <td> <input type="number" name="Geografska_Sirina" step="0.000001" value="@ViewBag.aranzman.Geografska_Sirina" required> </td>
+        <tr>
+            <td> Geografska duzina </td>
+            <td> <input type="number" name="Geografska_Duzina" step="0.000001" value="@ViewBag.aranzman.Geografska_Duzina" required> </td>
+        </tr>
+        <tr>
+            <td> Adresa nalazenja </td>
+            <td> <input type="text" name="Adresa_Nalazenja" value="@ViewBag.aranzman.Adresa_Nalazenja" required />  </td>
+        </tr>
+        <tr>
+            <td> Broj putnika </td>
+            <td> <input type="number" name="Broj_Putnika" min="1" value="@ViewBag.aranzman.Broj_Putnika" required> </td>
+        </tr>
+        <tr>
+            <td> Opis </td>
+            <td> <input type="text" name="Opis" value="@ViewBag.aranzman.Opis" required /> </td>
+        </tr>
+        <tr>
+            <td> Program </td>
+            <td> <input type="text" name="Program" value="@ViewBag.aranzman.Program" required /> </td>
+        </tr>
+        <tr>
+            @*<td>   </td>*@
+            <td> <input type="file" name="Poster" /> </td>
+        </tr>
+        <tr>
+            <td> Poster </td>
+            <td> <img width="200" height="150" src="@Url.Content(@ViewBag.aranzman.Poster)" /> </td>
+        </tr>
+        <tr>
+            <td> Smestaj </td>
+            <td> <input type="text" name="Smestaj" required value="@ViewBag.aranzman.Smestaj" /> </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"> <input type="submit" value="Izmeni" /></td>
+        </tr>
+    </table>
+</form>

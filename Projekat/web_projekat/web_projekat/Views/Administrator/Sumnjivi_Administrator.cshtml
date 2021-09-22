@@ -1,0 +1,32 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "Sumnjivi_Administrator";
+}
+
+<h2>Sumnjivi korisnici</h2>
+
+<table border="1">
+    <tr>
+        <td>Korisnicko ime</td>
+        <td>Ime</td>
+        <td>Prezime</td>
+        <td> Broj otkazivanja </td>
+    </tr>
+    @foreach (Model_Korisnik korisnik in ViewBag.sumnjivi)
+    {
+        <tr>
+            <td>@korisnik.Korisnicko_Ime</td>
+            <td>@korisnik.Ime</td>
+            <td>@korisnik.Prezime</td>
+            <td>@korisnik.Otkazivanja.ToString()</td>
+            <form method="post" action="~/Home/Blokiraj_korisnika">
+                <td>
+                    <input type="hidden" name="Korisnicko_Ime" value="@korisnik.Korisnicko_Ime">
+                    <input type="submit" value="Blokiraj"
+                </td>
+            </form>
+        </tr>
+    }
+</table>
+

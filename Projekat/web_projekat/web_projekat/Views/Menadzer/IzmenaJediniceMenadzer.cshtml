@@ -1,0 +1,41 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "IzmenaJediniceMenadzer";
+}
+
+<h2>Izmena jedinice</h2>
+
+<form method="post" action="~/Home/ExecuteJedinica">
+
+    <table border="1">
+        <tr>
+            <td>Naziv</td>
+            <td>Kapacitet</td>
+            <td>Ljubimci</td>
+            <td>Cena</td>
+        </tr>
+        <tr>
+            @{
+                string[] lista = ViewBag.jedinica.Naziv.Split('-');
+                string naziv = lista[1];
+            }
+            <td> <input type="text" name="Naziv" value="@naziv" required /></td>
+            <td> <input type="number" name="BrojGostiju" value="@ViewBag.jedinica.BrojGostiju" min="1" required /></td>
+            <td>
+                @if (ViewBag.jedinica.Ljubimci)
+                {
+                    <input type="checkbox" name="Ljubimci" value="true" checked />
+
+                }
+                else
+                {
+                    <input type="checkbox" name="Ljubimci" value="true" />
+                }
+            </td>
+            <td><input type="number" name="Cena" value="@ViewBag.jedinica.Cena" min="1" required /></td>
+            <td><input type="submit" value="Dodaj jedinicu" /> </td>
+        </tr>
+    </table>
+</form>
+

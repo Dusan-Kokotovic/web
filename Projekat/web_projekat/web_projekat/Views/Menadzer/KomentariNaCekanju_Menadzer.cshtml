@@ -1,0 +1,68 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "KomentariNaCekanju_Menadzer";
+}
+
+@if (ViewBag.komentari.Count == 0)
+{
+    <h2>Nema komentara</h2>
+
+}
+else
+{
+    <h2>Neodobreni komentari</h2>
+
+    foreach (Model_Komentar komentar in ViewBag.komentari)
+    {
+        <table border="1">
+            <tr>
+                <td> Autor </td>
+                <td> @komentar.Turista </td>
+            </tr>
+            <tr>
+                <td> Aranzman </td>
+                <td> @komentar.Aranzman </td>
+            </tr>
+            <tr>
+                <td> Ocena </td>
+                <td> @komentar.Ocena </td>
+            </tr>
+            <tr>
+                <td> Odobren </td>
+                @if (komentar.Odobren)
+                {
+                    <td> Odobren </td>
+                }
+                else if (komentar.Obrisan)
+                {
+                    <td> Obrisan </td>
+                }
+                else
+                {
+                    <td>
+                        <form method="post" action="~/Home/OdobriKomentar">
+                            <input type="hidden" name="Id" value="@komentar.Id">
+                            <input type="submit" value="Odobri" />
+                        </form>
+                        <form method="post" action="~/Home/ObrisiKomentar">
+                            <input type="hidden" name="Id" value="@komentar.Id">
+                            <input type="submit" value="Obrisi" />
+                        </form>
+
+
+                    </td>
+                }
+            </tr>
+            <tr>
+                <td> Komentar</td>
+                <td> @komentar.Tekst</td>
+            </tr>
+
+
+        </table>
+        <br />
+    }
+
+}
+

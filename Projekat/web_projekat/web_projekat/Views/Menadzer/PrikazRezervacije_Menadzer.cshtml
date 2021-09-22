@@ -1,0 +1,25 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "PrikazRezervacije_Menadzer";
+}
+
+<br />
+<br />
+
+<table border="0">
+    <tr>
+        <th> Identifikator </th>
+        <th> Aranzman </th>
+        <th> Smestajna jedinica</th>
+        <th> Turista </th>
+        <th> Status</th>
+    </tr>
+    <tr>
+        <td>@ViewBag.rezervacija.Id</td>
+        <td>@ViewBag.rezervacija.Aranzman</td>
+        <td>@ViewBag.rezervacija.SmestajnaJedinica</td>
+        <td>@ViewBag.rezervacija.Turista</td>
+        <td>@ViewBag.rezervacija.Status</td>
+    </tr>
+</table>

@@ -1,0 +1,92 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "Jedinice";
+}
+
+<h2>Smestajne jedinice </h2>
+
+<table border="1">
+    <tr>
+        <th> Kapacitet </th>
+        <th> Cena </th>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Kapacitet">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Kapacitet">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Cena">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Cena">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<br />
+
+@foreach (Model_Jedinica j in @ViewBag.jedinice)
+{
+    <table border="1">
+
+        <tr>
+            <td>Naziv</td>
+            <td> @j.Naziv</td>
+        </tr>
+        <tr>
+            <td>Broj Gostuju</td>
+            <td> @j.BrojGostiju</td>
+        </tr>
+        <tr>
+            <td>Kucni ljubimci</td>
+            @if (j.Ljubimci)
+            {
+                <td> Da </td>
+            }
+            else
+            {
+                <td>Ne</td>
+            }
+        </tr>
+        <tr>
+            <td> Cena </td>
+            <td> @j.Cena </td>
+
+        </tr>
+        <tr>
+            <td> Dostupnost </td>
+            @if (j.Dostupna)
+            {
+                <td> Slobodno </td>
+            }
+            else
+            {
+                <td> Rezervisano </td>
+            }
+        </tr>
+    </table>
+    <br />
+}
+

@@ -1,0 +1,93 @@
+[
+  {
+    "Id": "asdasdasd",
+    "Turista": "Radmila",
+    "Aranzman": "Aaaaaaa",
+    "SmestajnaJedinica": "aaaaaaa",
+    "Status": 1
+  },
+  {
+    "Id": "apfeaop",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "SmestajnaJedinica": "aaaa",
+    "Status": 1
+  },
+  {
+    "Id": "ufuuytf",
+    "Turista": "turista",
+    "Aranzman": "KAranzman1",
+    "SmestajnaJedinica": "kkkk",
+    "Status": 1
+  },
+  {
+    "Id": "srqqiss",
+    "Turista": "turista",
+    "Aranzman": "Aranzman2",
+    "SmestajnaJedinica": "dddd",
+    "Status": 1
+  },
+  {
+    "Id": "qtrypis",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "SmestajnaJedinica": "Smestaj4-eeee",
+    "Status": 1
+  },
+  {
+    "Id": "yurottw",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "SmestajnaJedinica": "Smestaj4-eeee",
+    "Status": 1
+  },
+  {
+    "Id": "ruyuyyd",
+    "Turista": "turista",
+    "Aranzman": "Aranzman1",
+    "SmestajnaJedinica": "Smestaj4-eeee",
+    "Status": 1
+  },
+  {
+    "Id": "arwdtwq",
+    "Turista": "dritan",
+    "Aranzman": "Aranzman2",
+    "SmestajnaJedinica": "Smestaj4-asdf",
+    "Status": 1
+  },
+  {
+    "Id": "aptoqod",
+    "Turista": "dritan",
+    "Aranzman": "Aranzman1",
+    "SmestajnaJedinica": "Smestaj4-vvvv",
+    "Status": 1
+  },
+  {
+    "Id": "pqirrty",
+    "Turista": "dritan",
+    "Aranzman": "Aranzman3",
+    "SmestajnaJedinica": "Smestaj4-wqwqwq",
+    "Status": 0
+  },
+  {
+    "Id": "qydetia",
+    "Turista": "turista",
+    "Aranzman": "Aranzman2",
+    "SmestajnaJedinica": "Smestaj4-kokok",
+    "Status": 1
+  },
+  {
+    "Id": "qpdryad",
+    "Turista": "turista",
+    "Aranzman": "TestAranzmana",
+    "SmestajnaJedinica": "FinalniTest-soba5",
+    "Status": 1
+  },
+  {
+    "Id": "syqrasu",
+    "Turista": "turista",
+    "Aranzman": "Aranzman2",
+    "SmestajnaJedinica": "Smestaj4-nova",
+    "Status": 0
+  }
+]

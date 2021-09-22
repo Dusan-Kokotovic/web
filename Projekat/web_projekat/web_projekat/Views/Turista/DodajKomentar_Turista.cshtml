@@ -1,0 +1,51 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "DodajKomentar_Turista";
+}
+
+@if (ViewBag.protekli.Count == 0)
+{
+    <h2> Nema dostupnih rezervacija za komentarisanje </h2>
+}
+else
+{
+    <h2> Dodaj komentar</h2>
+
+    foreach (Model_Rezervacija r in ViewBag.protekli)
+    {
+        <form method="post" action="~/Home/Okaci">
+            <table border="1">
+                <tr>
+                    <td colspan="2"> Ostavi komentar  </td>
+                </tr>
+                <tr>
+                    <td> Aranzman</td>
+                    <td> @r.Aranzman</td>
+                </tr>
+                <tr>
+                    <td> Smestajna jedinica</td>
+                    <td> @r.SmestajnaJedinica</td>
+                </tr>
+                <tr>
+                    <td> Zvezdica </td>
+                    <td>
+                        <input type="number" name="Zvezdice" />
+                    </td>
+                </tr>
+                <tr>
+                    <td> Komentar</td>
+                    <td> <input type="text" name="Komentar" /></td>
+                </tr>
+                <tr>
+                    <input type="hidden" name="Turista" value="@r.Turista">
+                    <input type="hidden" name="Aranzman" value="@r.Aranzman">
+                    <td colspan="2"> <input type="submit" value="Posalji" /></td>
+                </tr>
+            </table>
+        </form>
+    }
+
+
+}
+

@@ -1,0 +1,168 @@
+﻿@using web_projekat.Models;
+@{
+    ViewBag.Title = "PrikazSmestaj";
+}
+
+<h2>Prikaz smestaja</h2>
+
+<table border="0">
+    <tr>
+        <th> Naziv </th>
+        <th> Tip </th>
+        <th> Zvezdice </th>
+        <th> Bazen </th>
+        <th> Spa </th>
+        <th> Prilagodjeno</th>
+        <th> Wifi </th>
+    </tr>
+    <tr>
+        <td> @ViewBag.smestaj.smestaj.Naziv</td>
+        <td> @ViewBag.smestaj.smestaj.Tip</td>
+        <td> @ViewBag.smestaj.smestaj.Zvezdice</td>
+        @if (@ViewBag.smestaj.smestaj.Bazen)
+        {
+            <td> Da </td>}
+        else
+        {
+            <td>Ne</td>}
+        @if (@ViewBag.smestaj.smestaj.Spa)
+        {
+            <td> Da </td>
+        }
+        else
+        {
+            <td>Ne</td>
+        }
+        @if (@ViewBag.smestaj.smestaj.Prilagodjeno)
+        {
+            <td> Da </td>
+        }
+        else
+        {
+            <td>Ne</td>
+        }
+        @if (@ViewBag.smestaj.smestaj.Wifi)
+        {
+            <td> Da </td>
+        }
+        else
+        {
+            <td>Ne</td>
+        }
+    </tr>
+</table>
+<br />
+<table border="1">
+    <tr>
+        <th> Kapacitet </th>
+        <th> Cena </th>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Kapacitet">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Kapacitet">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Cena">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortJedinica">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Cena">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<br />
+
+@foreach (Model_Jedinica j in @ViewBag.smestaj.jedinice)
+{
+    <table border="1">
+
+        <tr>
+            <td>Naziv</td>
+            <td> @j.Naziv</td>
+        </tr>
+        <tr>
+            <td>Broj Gostuju</td>
+            <td> @j.BrojGostiju</td>
+        </tr>
+        <tr>
+            <td>Kucni ljubimci</td>
+            @if (j.Ljubimci)
+            {
+                <td> Da </td>
+            }
+            else
+            {
+                <td>Ne</td>
+            }
+        </tr>
+        <tr>
+            <td> Cena </td>
+            <td> @j.Cena </td>
+
+        </tr>
+        <tr>
+            <td> Dostupnost </td>
+            @if (j.Dostupna)
+            {
+                <td> Slobodno </td>
+            }
+            else
+            {
+                <td> Rezervisano </td>
+            }
+        </tr>
+    </table>
+    <br />
+}
+
+<form method="post" action="~/Pretrage/Jedinice">
+    <table border="1">
+        <tr>
+            <td> Cena </td>
+            <td> Min kapacitet </td>
+            <td> Max kapacitet </td>
+            <td> Ljubimci </td>
+            <td> Pretrazi </td>
+
+        </tr>
+        <tr>
+            <td> <input type="number" name="Cena" min="1" /> </td>
+            <td> <input type="number" name="DonjaGranica" min="1" /> </td>
+            <td> <input type="number" name="GornjaGranica" min="1" /> </td>
+            <td>
+                <select id="Ljubimci" name="Ljubimci">
+                    <option value=""></option>
+                    <option value="Da">Da</option>
+                    <option value="Ne">Ne</option>
+                </select>
+            </td>
+            <td> <input type="submit" value="Pretrazi" /></td>
+        </tr>
+    </table>
+</form>
+@*<form method="post" action="~/Home/Jedinice">
+        <input type="hidden" name="Naziv" value=" @ViewBag.smestaj.smestaj.Naziv">
+        <input type="submit" value="Smestajne jedinice" />
+    </form>*@
+

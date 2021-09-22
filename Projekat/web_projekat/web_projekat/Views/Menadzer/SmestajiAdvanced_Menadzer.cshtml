@@ -1,0 +1,237 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "SmestajiAdvanced_Menadzer";
+}
+
+@if (ViewBag.smestaji.Count == 0)
+{
+    <h3> Lista je prazna</h3>
+}
+else
+{
+
+
+
+<h2> Smestaji </h2>
+
+<table>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortSmestaja">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Naziv">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortSmestaja">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Jedinice">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortSmestaja">
+                <input type="submit" value="Slobodne rastuce" />
+                <input type="hidden" name="Parametar" value="Slobodne">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th> Naziv </th>
+        <th> Tip </th>
+        <th> Zvezdice </th>
+        <th> Bazen </th>
+        <th> Spa </th>
+        <th> Prilagodjeno</th>
+        <th> Wifi </th>
+        <th> Modifikacije</th>
+    </tr>
+    @foreach (Model_Smestaj s in ViewBag.smestaji)
+    {
+        <tr>
+            <td> @s.Naziv</td>
+            <td> @s.Tip</td>
+            <td> @s.Zvezdice</td>
+            @if (s.Bazen)
+            {
+                <td> Da </td>}
+            else
+            {
+                <td>Ne</td>}
+            @if (s.Spa)
+            {
+                <td> Da </td>
+            }
+            else
+            {
+                <td>Ne</td>
+            }
+            @if (s.Prilagodjeno)
+            {
+                <td> Da </td>
+            }
+            else
+            {
+                <td>Ne</td>
+            }
+            @if (s.Wifi)
+            {
+                <td> Da </td>
+            }
+            else
+            {
+                <td>Ne</td>
+            }
+            <td>
+                <form method="post" action="~/Home/ObrisiSmestaj">
+                    <input type="hidden" name="Naziv" value="@s.Naziv" />
+                    <input type="submit" value="Obrisi" />
+                </form>
+                <form method="post" action="~/Home/IzmeniSmestaj">
+                    <input type="hidden" name="Naziv" value="@s.Naziv" />
+                    <input type="submit" value="Izmeni" />
+                </form>
+                <form method="post" action="~/Home/JediniceSmestajne">
+                    <input type="hidden" name="Naziv" value="@s.Naziv" />
+                    <input type="submit" value="Jedinice" />
+                </form>
+            </td>
+        </tr>
+    }
+        <tr>
+            <td>
+                <form method="post" action="~/Home/SortSmestaja">
+                    <input type="submit" value="Opadajuce" />
+                    <input type="hidden" name="Parametar" value="Naziv">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Home/SortSmestaja">
+                    <input type="submit" value="Opadajuce" />
+                    <input type="hidden" name="Parametar" value="Jedinice">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+            <td>
+                <form method="post" action="~/Home/SortSmestaja">
+                    <input type="submit" value="Slobodne opadajuce" />
+                    <input type="hidden" name="Parametar" value="Slobodne">
+                    <input type="hidden" name="Red" value="Opadajuce">
+                </form>
+            </td>
+        </tr>
+</table>
+<br />
+
+<form method="post" action="~/Pretrage/Smestaji">
+    <table border="1">
+        <tr>
+            <td> Naziv</td>
+            <td> Tip </td>
+            <td> Bazen</td>
+            <td> Spa </td>
+            <td> Prilagodjeno</td>
+            <td> Wifi </td>
+            <td>Pretrazi</td>
+        </tr>
+        <tr>
+            <td> <input type="text" name="Naziv" /> </td>
+            <td>
+                <select id="Tip" name="Tip">
+                    <option value=""></option>
+                    <option value="Hotel">Hotel</option>
+                    <option value="Motel">Motel</option>
+                    <option value="Vila">Vila</option>
+                </select>
+            </td>
+            <td>
+                <select id="Bazen" name="Bazen">
+                    <option value=""></option>
+                    <option value="Da">Da</option>
+                    <option value="Ne">Ne</option>
+                </select>
+            </td>
+            <td>
+                <select id="Spa" name="Spa">
+                    <option value=""></option>
+                    <option value="Da">Da</option>
+                    <option value="Ne">Ne</option>
+                </select>
+            </td>
+            <td>
+                <select id="Prilagodjeno" name="Prilagodjeno">
+                    <option value=""></option>
+                    <option value="Da">Da</option>
+                    <option value="Ne">Ne</option>
+                </select>
+            </td>
+            <td>
+                <select id="Wifi" name="Wifi">
+                    <option value=""></option>
+                    <option value="Da">Da</option>
+                    <option value="Ne">Ne</option>
+                </select>
+            </td>
+            <td> <input type="submit" value="Pretrazi" /></td>
+        </tr>    
+    </table>
+</form>
+}
+<br />
+<h2> Dodaj novi</h2>
+<br />
+<form method="post" action="~/Home/DodajSmestaj">
+    <table border="1">
+        <tr>
+            <td> Naziv </td>
+            <td> <input type="text" name="Naziv" required /> </td>
+        </tr>
+        <tr>
+            <td> Tip smestaja </td>
+            <td>
+                <select id="Tip" name="Tip">
+                    <option value="Vila">Vila</option>
+                    <option value="Motel">Motel</option>
+                    <option value="Hotel">Hotel</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td> Zvezdice</td>
+            <td> <input type="number" name="Zvezdice" min="1" max="5" required /></td>
+        </tr>
+        <tr>
+            <td> Bazen</td>
+            <td>
+                <input type="checkbox" name="Bazen" value="true" />
+            </td>
+        </tr>
+        <tr>
+            <td> Spa </td>
+            <td>
+                <input type="checkbox" name="Spa" value="true" />
+            </td>
+        </tr>
+        <tr>
+            <td> Prilagodjeno za invalide</td>
+            <td>
+                <input type="checkbox" name="Prilagodjeno" value="true" />
+            </td>
+        </tr>
+        <tr>
+            <td> Wifi </td>
+            <td>
+                <input type="checkbox" name="Wifi" value="true" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"> <input type="submit" name="sacuvaj" /> </td>
+        </tr>
+    </table>
+</form>
+
+

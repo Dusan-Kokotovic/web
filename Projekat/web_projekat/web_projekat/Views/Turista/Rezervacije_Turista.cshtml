@@ -1,0 +1,130 @@
+﻿@using web_projekat.Models;
+
+@{
+    ViewBag.Title = "Rezervacije_Turista";
+}
+
+<h2>Moje rezervacije</h2>
+
+<table border="1">
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Id">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Aranzman">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Jedinica">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Status">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td> Identifikator </td>
+        <td> Aranzman </td>
+        <td> Smestajna jedinica</td>
+        <td> Status</td>
+        <td> Otkazivanje </td>
+    </tr>
+    @foreach (Model_Rezervacija r in ViewBag.rezervacije)
+    {
+        <tr>
+            <td> @r.Id</td>
+            <td> @r.Aranzman</td>
+            <td> @r.SmestajnaJedinica</td>
+            <td> @r.Status.ToString()</td>
+            @if (r.Status == Statusi_Rezervacije.Aktivna)
+            {
+                <form method="post" action="~/Home/Otkazi">
+                    <td>
+                        <input type="hidden" name="Aranzman" value="@r.Aranzman">
+                        <input type="hidden" name="Id" value="@r.Id">
+                        <input type="hidden" name="Jedinica" value="@r.SmestajnaJedinica">
+                        <input type="submit" value="Otkazi" />
+                    </td>
+                </form>
+            }
+            else
+            {
+                <td> @r.Status.ToString()</td>
+
+            }
+        </tr>
+    }
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Id">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Aranzman">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Jedinica">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortRezervacija">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Status">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<br />
+<form method="post" action="~/Pretrage/Rezervacije">
+    <table border="1">
+        <tr>
+            <td> Id </td>
+            <td> Aranzman </td>
+            <td> Smestajna jedinica </td>
+            <td> Status</td>
+            <td> Pretrazi</td>
+
+        </tr>
+        <tr>
+            <td> <input type="text" name="Id" /> </td>
+            <td> <input type="text" name="Aranzman" /> </td>
+            <td> <input type="text" name="SmestajnaJedinica" /> </td>
+            <td>
+                <select id="Status" name="Status">
+                    <option value=""></option>
+                    <option value="Aktivna">Aktivna</option>
+                    <option value="Otkazana">Otkazana</option>
+                </select>
+            </td>
+            <td> <input type="submit" value="Pretrazi" /> </td>
+
+        </tr>
+    </table>
+</form>

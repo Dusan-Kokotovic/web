@@ -1,0 +1,147 @@
+﻿@using web_projekat.Models;
+@{
+    ViewBag.Title = "Index";
+}
+<h2> Pocetna stranica</h2>
+<a href="~/Home/Profil"> Moj profil </a>
+<a href="~/Home/KomentariNaCekanju"> Komentari na cekanju </a>
+<a href="~/Home/RezervacijeMojih"> Rezervacije mojih aranzmana </a>
+<a href="~/Home/Aranzmani"> Moji aranzmani </a>
+<a href="~/Home/SmestajiAdvanced"> Smestaji </a>
+<a style="color:red" href="~/Home/Logout"> Logout </a>
+
+
+
+
+
+<form method="post" action="~/Home/Tekuci_Aranzmani">
+    <td>
+        <input type="submit" value="Tekuci Aranzmani" />
+    </td>
+</form>
+<form method="post" action="~/Home/Utisci">
+    <td>
+        <input type="submit" value="Utisci" />
+    </td>
+</form>
+
+<br />
+<br />
+
+
+<table border="1" @*style="float: left;*@>
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortAranzmanaPredstojecih">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="Naziv">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortAranzmanaPredstojecih">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="DatumPocetka">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortAranzmanaPredstojecih">
+                <input type="submit" value="Rastuce" />
+                <input type="hidden" name="Parametar" value="DatumKraja">
+                <input type="hidden" name="Red" value="Rastuce">
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <th> Naziv </th>
+        <th> Datum Poceka </th>
+        <th> Datum Kraja </th>
+        <th> Poster  </th>
+        <th> Prevoz  </th>
+        <th> Detalji </th>
+    </tr>
+    @foreach (Model_Aranzman prikaz in ViewBag.prikaz)
+    {
+        <tr>
+            <td> @prikaz.Naziv </td>
+            <td> @prikaz.Datum_Pocetka </td>
+            <td> @prikaz.Datum_Zavrsetka </td>
+            <td> <img width="200px" height="150" src="@Url.Content(prikaz.Poster)" /> </td>
+            <td> @prikaz.Tip_Prevoza</td>
+            <form method="post" action="~/Home/Detalji">
+                <td>
+                    <input type="hidden" name="Naziv" value="@prikaz.Naziv">
+                    <input type="submit" value="Detalji" />
+                </td>
+            </form>
+        </tr>
+    }
+    <tr>
+        <td>
+            <form method="post" action="~/Home/SortAranzmanaPredstojecih">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="Naziv">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortAranzmanaPredstojecih">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="DatumPocetka">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+        <td>
+            <form method="post" action="~/Home/SortAranzmanaPredstojecih">
+                <input type="submit" value="Opadajuce" />
+                <input type="hidden" name="Parametar" value="DatumKraja">
+                <input type="hidden" name="Red" value="Opadajuce">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<form method="post" action="~/Pretrage/Aranzmani">
+    <table border="1">
+        <tr>
+            <td> Naziv </td>
+            <td> Prevoz </td>
+            <td> Tip  </td>
+            <td> Gornja granica pocetka</td>
+            <td> Donja granica pocetka</td>
+            <td> Gornja granica kraja</td>
+            <td> Donja granica kraja</td>
+            <td> Pretrazi </td>
+        </tr>
+        <tr>
+            <td> <input type="text" name="Naziv" />  </td>
+            <td>
+                <select id="Tip_Prevoza" name="Tip_Prevoza">
+                    <option value=""></option>
+                    <option value="Autobus">Autobus</option>
+                    <option value="Avion">Avion</option>
+                    <option value="Kombinovano">Kombinovano</option>
+                    <option value="Individualan">Individualan</option>
+                    <option value="Ostalo">Ostalo</option>
+                </select>
+            </td>
+            <td>
+                <select id="Tip_Aranzmana" name="Tip_Aranzmana">
+                    <option value=""></option>
+                    <option value="Nocenje_Sa_Doruckom">Nocenje_Sa_Doruckom</option>
+                    <option value="Polupansion">Polupansion</option>
+                    <option value="Pun_Pansion">Pun_Pansion</option>
+                    <option value="All_Inclusive">All_Inclusive</option>
+                    <option value="Najam_Apartmana">Najam_Apartmana</option>
+                </select>
+            </td>
+            <td> <input type="date" name="Gornja_Granica_Pocetak" /> </td>
+            <td> <input type="date" name="Donja_Granica_Pocetak" /> </td>
+            <td> <input type="date" name="Gornja_Granica_Kraj" /> </td>
+            <td> <input type="date" name="Donja_Granica_Kraj" /> </td>
+            <td> <input type="submit" value="Pretrazi" /> </td>
+
+        </tr>
+    </table>
+</form>
